@@ -9,6 +9,12 @@ pipeline {
                 git 'https://github.com/Medou13500/TodoList-'
             }
         }
+        stage('Check Node.js') {
+            steps {
+                sh 'node -v'
+            }
+        }
+
 
         // j'exécute le script test.js
         stage('Run JS') {
