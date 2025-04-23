@@ -3,12 +3,6 @@ pipeline {
     agent any
 
     stages {
-        // récupération du code GitHub
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/Medou13500/TodoList-'
-            }
-        }
         stage('Check Node.js') {
             steps {
                 sh 'node -v'
