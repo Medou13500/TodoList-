@@ -1,6 +1,9 @@
-// Création de la pipeline de mon repo TodoList
 pipeline {
     agent any
+
+    environment {
+        PATH = "/usr/local/bin:/opt/homebrew/bin:$PATH" //  chemin à Node.js 
+    }
 
     stages {
         stage('Check Node.js') {
@@ -9,11 +12,9 @@ pipeline {
             }
         }
 
-
-        // j'exécute le script test.js
         stage('Run JS') {
             steps {
-                sh 'node test.js'
+                sh 'node test.js' 
             }
         }
     }
